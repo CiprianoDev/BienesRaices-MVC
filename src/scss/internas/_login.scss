@@ -1,0 +1,69 @@
+
+.login{
+    
+    margin-top: 0;
+    height: 40rem;
+    @include tablet{
+        height: 70rem;
+    }
+
+    @include desktop{
+        height: 60rem;
+    }
+
+   
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    fieldset{
+        width: 30rem;
+        height: 35rem;
+
+        @include tablet{
+            width: 60rem;
+        }
+
+        @include desktop{
+            width: 80rem;
+        }
+    }
+
+    label, input{
+        margin-top: 1rem;
+    }
+
+    .boton-verde-block{
+        margin: 3rem 0;
+        width: 100%;
+    }
+
+    .alerta{
+        width: 60rem;
+    }
+    
+    
+
+    
+}
+
+.boton-mostrar{
+   
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    bottom: 0;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    .icono-mostrar{
+        width: 3rem;
+    }
+}
+
+.titulo-login{
+    margin-top: 10rem;
+    font-weight: $bold;
+}

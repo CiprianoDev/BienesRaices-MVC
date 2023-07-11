@@ -1,0 +1,19 @@
+{
+    "name": "gaboc/bienesraices",
+    "description": "Bienes Raices",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "GabrielCiprianoLara",
+            "email": "cilg011022@itsuruapan.edu.mx"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7"
+    }
+}
