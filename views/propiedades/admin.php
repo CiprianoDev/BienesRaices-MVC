@@ -1,0 +1,1 @@
+<h1>Vista de admin</h1>

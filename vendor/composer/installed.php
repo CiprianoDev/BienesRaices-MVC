@@ -3,7 +3,7 @@
         'name' => 'gaboc/bienesraices',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '08827c50c358c1cfb55af4a150be7373bcecbcf4',
+        'reference' => '5da3442c69f56b5760075c4cd55f897dfe194ed2',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'gaboc/bienesraices' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '08827c50c358c1cfb55af4a150be7373bcecbcf4',
+            'reference' => '5da3442c69f56b5760075c4cd55f897dfe194ed2',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

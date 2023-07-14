@@ -11,6 +11,10 @@ class ComposerStaticInitc1cfc46de5bf895a7aa5d7eecf8cc7a9
     );
 
     public static $prefixLengthsPsr4 = array (
+        'c' => 
+        array (
+            'controllers\\' => 12,
+        ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
@@ -18,6 +22,7 @@ class ComposerStaticInitc1cfc46de5bf895a7aa5d7eecf8cc7a9
         'M' => 
         array (
             'Model\\' => 6,
+            'MVC\\' => 4,
         ),
         'I' => 
         array (
@@ -30,6 +35,10 @@ class ComposerStaticInitc1cfc46de5bf895a7aa5d7eecf8cc7a9
     );
 
     public static $prefixDirsPsr4 = array (
+        'controllers\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/controllers',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-factory/src',
@@ -38,6 +47,10 @@ class ComposerStaticInitc1cfc46de5bf895a7aa5d7eecf8cc7a9
         'Model\\' => 
         array (
             0 => __DIR__ . '/../..' . '/models',
+        ),
+        'MVC\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/',
         ),
         'Intervention\\Image\\' => 
         array (

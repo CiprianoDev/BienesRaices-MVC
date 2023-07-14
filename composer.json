@@ -4,7 +4,9 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Model\\": "./models"
+            "Model\\": "./models",
+            "MVC\\": "./",
+            "controllers\\": "./controllers"
         }
     },
     "authors": [
