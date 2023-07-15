@@ -12,25 +12,33 @@ class Router
         $this->rutasGET[$url] = $funcion;
     }
 
-    public function comprobarRutas(){
+    public function comprobarRutas()
+    {
         $urlActual = $_SERVER['PATH_INFO'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
 
-        if($metodo === 'GET'){
+        if ($metodo === 'GET') {
             $funcion = $this->rutasGET[$urlActual] ?? null;
         }
 
-        if($funcion){
-            call_user_func($funcion,$this);
-        }else{
+        if ($funcion) {
+            call_user_func($funcion, $this);
+        } else {
             echo 'pagina no encontrada';
         }
-    } 
+    }
 
-    public function render($view){
-        include __DIR__ .  '/views/' . $view . '.php';
+    public function render($view, $datos = [])
+    {
+
+        foreach ($datos as $key => $value) {
+            $$key = $value;
+        }
+
+        ob_start();
+        include_once __DIR__ .  "/views/$view.php";
+        $contenido = ob_get_clean();
+        include_once __DIR__ .  "/views/layout.php";
     }
 }
-
-?>
