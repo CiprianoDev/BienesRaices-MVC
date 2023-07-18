@@ -12,6 +12,11 @@ class Router
         $this->rutasGET[$url] = $funcion;
     }
 
+    public function post($url, $funcion)
+    {
+        $this->rutasPOST[$url] = $funcion;
+    }
+
     public function comprobarRutas()
     {
         $urlActual = $_SERVER['PATH_INFO'] ?? '/';
@@ -20,6 +25,8 @@ class Router
 
         if ($metodo === 'GET') {
             $funcion = $this->rutasGET[$urlActual] ?? null;
+        }else{
+            $funcion = $this->rutasPOST[$urlActual] ?? null;
         }
 
         if ($funcion) {
@@ -35,7 +42,7 @@ class Router
         foreach ($datos as $key => $value) {
             $$key = $value;
         }
-
+        
         ob_start();
         include_once __DIR__ .  "/views/$view.php";
         $contenido = ob_get_clean();

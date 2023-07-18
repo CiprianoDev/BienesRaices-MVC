@@ -56,6 +56,7 @@ $auth = $_SESSION['login'] ?? false;
     </header>
 
     <?php echo $contenido ?>
+    
     <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
             <nav class="navegacion">

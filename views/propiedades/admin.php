@@ -52,7 +52,7 @@
                             <input class="boton-rojo-block" type="submit" value="Eliminar "></input>
                         </form>
 
-                        <a class="boton-amarillo-block" href="/admin/propiedades/actualizar.php?id=<?php echo $propiedad->id; ?>">Actualizar</a>
+                        <a class="boton-amarillo-block" href="/propiedades/actualizar?id=<?php echo $propiedad->id; ?>">Actualizar</a>
                     </td>
 
                 </tr>
