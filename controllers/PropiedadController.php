@@ -12,10 +12,12 @@ class PropiedadController
     public static function index(Router $router)
     {
         $propiedades = Propiedad::all();
+        $vendedores = Vendedor::all();
         $resultado = $_GET['resultado'] ?? null;
         $router->render('propiedades/admin', [
             'propiedades' => $propiedades,
-            'resultado' => $resultado
+            'resultado' => $resultado,
+            'vendedores' => $vendedores
         ]);
     }
 
@@ -57,8 +59,10 @@ class PropiedadController
     public static function actualizar(Router $router)
     {
         if ($_SERVER["REQUEST_METHOD"] === "GET") {
+
             $id = validarORedirigir('/admin');
         } else {
+
             $id = $_POST['id'];
         }
 
@@ -95,6 +99,23 @@ class PropiedadController
             'vendedores' => $vendedores,
             'errores' => $errores,
             'id' => $id
+
         ]);
+    }
+
+    public static function eliminar()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $tipo = $_POST['tipo'];
+            $id = $_POST['delete'];
+            $id = filter_var($id, FILTER_VALIDATE_INT);
+        
+            if (verificarTipo($tipo)) {
+                if ($tipo === 'propiedad') {
+                    $propiedad = Propiedad::find($id);
+                    $propiedad->eliminar();
+                } 
+            }
+        }
     }
 }
