@@ -84,13 +84,13 @@
                     <td><?php echo $vendedor->nombre . " " . $vendedor->apellido; ?></td>
                     <td><?php echo $vendedor->telefono; ?></td>
                     <td>
-                        <form action="" method="post">
+                        <form action="/vendedores/eliminar" method="post">
                             <input type="hidden" name="delete" value="<?php echo $vendedor->id; ?>">
                             <input type="hidden" name="tipo" value="vendedor">
                             <input class="boton-rojo-block" type="submit" value="Eliminar "></input>
                         </form>
 
-                        <a class="boton-amarillo-block" href="/admin/vendedores/actualizar.php?id=<?php echo $vendedor->id; ?>">Actualizar</a>
+                        <a class="boton-amarillo-block" href="/vendedores/actualizar?id=<?php echo $vendedor->id; ?>">Actualizar</a>
                     </td>
 
                 </tr>
