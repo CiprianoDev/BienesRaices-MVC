@@ -102,7 +102,7 @@ class PropiedadController
             $id = $_POST['delete'];
             $id = filter_var($id, FILTER_VALIDATE_INT);
 
-            if (verificarTipo($tipo)) {
+            if (verificarTipo($tipo) && $id) {
                 if ($tipo === 'propiedad') {
                     $propiedad = Propiedad::find($id);
                     $propiedad->eliminar();

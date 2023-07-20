@@ -61,7 +61,7 @@ class VendedorController
             $id = $_POST['delete'];
             $id = filter_var($id, FILTER_VALIDATE_INT);
 
-            if (verificarTipo($tipo)) {
+            if (verificarTipo($tipo) && $id) {
                 if ($tipo === 'vendedor') {
                     $propiedad = Vendedor::find($id);
                     $propiedad->eliminar();
