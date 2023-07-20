@@ -58,14 +58,7 @@ class PropiedadController
     }
     public static function actualizar(Router $router)
     {
-        if ($_SERVER["REQUEST_METHOD"] === "GET") {
-
-            $id = validarORedirigir('/admin');
-        } else {
-
-            $id = $_POST['id'];
-        }
-
+        $id = validarORedirigir('/admin');
         $vendedores = Vendedor::all();
         $errores = Propiedad::getErrores();
         $propiedad = Propiedad::find($id);
@@ -97,8 +90,7 @@ class PropiedadController
         $router->render("propiedades/actualizar", [
             'propiedad' => $propiedad,
             'vendedores' => $vendedores,
-            'errores' => $errores,
-            'id' => $id
+            'errores' => $errores
 
         ]);
     }
@@ -109,12 +101,12 @@ class PropiedadController
             $tipo = $_POST['tipo'];
             $id = $_POST['delete'];
             $id = filter_var($id, FILTER_VALIDATE_INT);
-        
+
             if (verificarTipo($tipo)) {
                 if ($tipo === 'propiedad') {
                     $propiedad = Propiedad::find($id);
                     $propiedad->eliminar();
-                } 
+                }
             }
         }
     }

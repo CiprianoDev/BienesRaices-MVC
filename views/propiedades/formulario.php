@@ -1,7 +1,6 @@
 <fieldset>
     <legend>Informacion General</legend>
 
-    <input type="hidden" name="id" value="<?php echo s($id) ?>">
     <label for="titulo">Titulo:</label>
     <input name="propiedad[titulo]" type="text" id="titulo" placeholder="Titulo Propiedad" value="<?php echo s($propiedad->titulo) ?>">
 

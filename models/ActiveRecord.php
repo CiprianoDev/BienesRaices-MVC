@@ -11,7 +11,7 @@ class ActiveRecord
     protected static $errores = [];
     protected static $tabla = '';
 
-    
+
 
     public static function setDB($database)
     {
@@ -60,8 +60,8 @@ class ActiveRecord
         $query .= join(", ", $valores);
         $query .= " WHERE id = '" . self::$db->escape_string($this->id) . "'";
         $query .= " LIMIT 1";
-        
-        
+
+
         $resultado = self::$db->query($query);
         if ($resultado) {
             header('location: /admin?resultado=2');
@@ -70,11 +70,13 @@ class ActiveRecord
 
     public function eliminar()
     {
-        $query = "DELETE FROM " . static::$tabla . " WHERE id = " . s($this->id ) . " LIMIT 1";
+        $query = "DELETE FROM " . static::$tabla . " WHERE id = " . s($this->id) . " LIMIT 1";
         $resultado = self::$db->query($query);
         if ($resultado) {
 
-            $this->borrarImagen();
+            if (static::$tabla == "propiedades") {
+                $this->borrarImagen();
+            }
             header('location: /admin?resultado=3');
         }
     }
@@ -151,7 +153,7 @@ class ActiveRecord
         return array_shift($resultado);
     }
 
-   
+
 
     public static function consultaSQL($query)
     {

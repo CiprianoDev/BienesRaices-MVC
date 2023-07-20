@@ -31,14 +31,7 @@ class VendedorController
 
     public static function actualizar(Router $router)
     {
-        if ($_SERVER["REQUEST_METHOD"] === "GET") {
-
-            $id = validarORedirigir('/admin');
-        } else {
-
-            $id = $_POST['id'];
-        }
-
+        $id = validarORedirigir('/admin');
         $vendedor = Vendedor::find($id);
         $errores = Vendedor::getErrores();
 

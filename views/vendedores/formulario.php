@@ -1,6 +1,6 @@
 <fieldset>
     <legend>Informacion General</legend>
-    <input type="hidden" name="id" value="<?php echo s($id) ?>">
+    
     <label for="nombre">Nombre:</label>
     <input name="vendedor[nombre]" type="text" id="nombre" placeholder="Nombre del vendedor" value="<?php echo s($vendedor->nombre) ?>">
 

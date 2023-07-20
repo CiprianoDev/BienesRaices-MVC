@@ -11,7 +11,7 @@
 
 
 
-    <form action="/propiedades/actualizar" class="formulario" method="POST" enctype="multipart/form-data">
+    <form class="formulario" method="POST" enctype="multipart/form-data">
         
         <?php include __DIR__ . '/formulario.php' ?>
 
