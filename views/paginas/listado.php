@@ -1,16 +1,3 @@
-<?php
-
-use App\Propiedad;
-
-if ($_SERVER["SCRIPT_NAME"] === "/anuncios.php") {
-    $propiedades = Propiedad::all();
-} else {
-    $propiedades = Propiedad::get(3);
-}
-
-$carpertaImagenes = "/imagenes/";
-?>
-
 <section class="seccion contenedor">
     <h2>Casas y Depas en Venta</h2>
 
@@ -19,7 +6,7 @@ $carpertaImagenes = "/imagenes/";
         <?php foreach ($propiedades as $propiedad) : ?>
             <div class="anuncio">
 
-                <img loading="lazy" src="<?php echo $carpertaImagenes . $propiedad->imagen ?>" alt="anuncio">
+                <img loading="lazy" src="/imagenes/<?php echo $propiedad->imagen ?>" alt="anuncio">
 
 
                 <div class="contenido-anuncio">
@@ -51,8 +38,9 @@ $carpertaImagenes = "/imagenes/";
 
 
     </div> <!--.contenedor-anuncios-->
-
-    <div class="alinear-derecha">
-        <a href="anuncios.php" class="boton-verde">Ver Todas</a>
-    </div>
+    <?php if ($inicio) { ?>
+        <div class="alinear-derecha">
+            <a href="/anuncios" class="boton-verde">Ver Todas</a>
+        </div>
+    <?php } ?>
 </section>

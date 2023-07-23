@@ -1,16 +1,15 @@
 <?php
 require_once __DIR__ . "/../includes/app.php";
 
+use controllers\PaginasController;
 use MVC\Router;
 use controllers\PropiedadController;
 use controllers\VendedorController;
 
 $router = new Router();
 
-
-$router->get('/admin',[PropiedadController::class,'index']);
-
 //rutas de propiedades
+$router->get('/admin',[PropiedadController::class,'index']);
 $router->get('/propiedades/crear',[PropiedadController::class,'crear']);
 $router->post('/propiedades/crear',[PropiedadController::class,'crear']);
 $router->get('/propiedades/actualizar',[PropiedadController::class,'actualizar']);
@@ -23,4 +22,12 @@ $router->post('/vendedores/crear',[VendedorController::class,'crear']);
 $router->get('/vendedores/actualizar',[VendedorController::class,'actualizar']);
 $router->post('/vendedores/actualizar',[VendedorController::class,'actualizar']);
 $router->post('/vendedores/eliminar',[VendedorController::class,'eliminar']);
+
+//paginas
+$router->get('/',[PaginasController::class,'index']);
+$router->get('/nosotros',[PaginasController::class,'nosotros']);
+$router->get('/anuncios',[PaginasController::class,'anuncios']);
+$router->get('/blog',[PaginasController::class,'blog']);
+$router->get('/contacto',[PaginasController::class,'contacto']);
+
 $router->comprobarRutas();

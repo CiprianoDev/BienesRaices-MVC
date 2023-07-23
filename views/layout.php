@@ -24,25 +24,25 @@ $auth = $_SESSION['login'] ?? false;
     <header class="header <?php echo $inicio ? 'inicio' : ''  ?>">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="/index.php">
-                    <img src="/build/img/logo.svg" alt="Logotipo de Bienes Raices">
+                <a href="/">
+                    <img src="build/img/logo.svg" alt="Logotipo de Bienes Raices">
                 </a>
 
                 <div class="mobile-menu">
-                    <img src="/build/img/barras.svg" alt="icono menu responsive">
+                    <img src="build/img/barras.svg" alt="icono menu responsive">
                 </div>
 
                 <div class="derecha">
                     <img class="dark-mode-boton" src="/build/img/dark-mode.svg">
                     <nav class="navegacion">
-                        <a href="../../nosotros.php">Nosotros</a>
-                        <a href="../../anuncios.php">Anuncios</a>
-                        <a href="../../blog.php">Blog</a>
-                        <a href="../../contacto.php">Contacto</a>
+                        <a href="/nosotros">Nosotros</a>
+                        <a href="/anuncios">Anuncios</a>
+                        <a href="/blog">Blog</a>
+                        <a href="/contacto">Contacto</a>
 
                         <?php if ($auth) : ?>
 
-                            <a href="../../cerrarSesion.php">Cerrar Sesion</a>
+                            <a href="/cerrarSesion">Cerrar Sesion</a>
                         <?php endif ?>
                     </nav>
                 </div>
@@ -55,19 +55,19 @@ $auth = $_SESSION['login'] ?? false;
         </div>
     </header>
 
-    <?php echo $contenido ?>
+    <?php echo $contenido; ?>
     
-    <footer class="footer seccion">
+    <footer class="footer">
         <div class="contenedor contenedor-footer">
             <nav class="navegacion">
-                <a href="nosotros.php">Nosotros</a>
-                <a href="anuncios.php">Anuncios</a>
-                <a href="blog.php">Blog</a>
-                <a href="contacto.php">Contacto</a>
+                <a href="/nosotros">Nosotros</a>
+                <a href="/anuncios">Anuncios</a>
+                <a href="/blog">Blog</a>
+                <a href="/contacto">Contacto</a>
             </nav>
         </div>
 
-        <p class="copyright">Todos los derechos Reservados 2021 &copy;</p>
+        <p class="copyright">Todos los derechos Reservados <?php echo date('Y') ?> &copy;</p>
     </footer>
 
     <script src="../build/js/bundle.min.js"></script>

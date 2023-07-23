@@ -10,6 +10,7 @@ const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const notify = require('gulp-notify');
 const cache = require('gulp-cache');
+const webp = require('gulp-webp');
 
 const paths = {
     scss: 'src/scss/**/*.scss',
@@ -46,6 +47,13 @@ function imagenes() {
        // .pipe(notify({ message: 'Imagen Completada'}));
 }
 
+function versionWebp() {
+    return src(paths.imagenes)
+        .pipe( webp() )
+        .pipe(dest('public/build/img'))
+        .pipe(notify({ message: 'Imagen Completada'}));
+}
+
 
 
 function watchArchivos() {
@@ -54,4 +62,4 @@ function watchArchivos() {
     watch( paths.imagenes, imagenes );
 }
   
-exports.default = parallel(css, javascript,  imagenes,  watchArchivos ); 
+exports.default = parallel(css, javascript,  imagenes,  watchArchivos, versionWebp ); 

@@ -10,19 +10,21 @@ use Intervention\Image\ImageManagerStatic as Image;
 class PropiedadController
 {
     public static function index(Router $router)
-    {
+    {   $inicio = false;
         $propiedades = Propiedad::all();
         $vendedores = Vendedor::all();
         $resultado = $_GET['resultado'] ?? null;
         $router->render('propiedades/admin', [
             'propiedades' => $propiedades,
             'resultado' => $resultado,
-            'vendedores' => $vendedores
+            'vendedores' => $vendedores,
+            'inicio' => $inicio
         ]);
     }
 
     public static function crear(Router $router)
-    {
+    {   
+        $inicio = false;
         $propiedad = new Propiedad();
         $vendedores = Vendedor::all();
         $errores = Propiedad::getErrores();
@@ -53,11 +55,13 @@ class PropiedadController
         $router->render('propiedades/crear', [
             'propiedad' => $propiedad,
             'vendedores' => $vendedores,
-            'errores' => $errores
+            'errores' => $errores,
+            'inicio' => $inicio
         ]);
     }
     public static function actualizar(Router $router)
-    {
+    {   
+        $inicio = false;
         $id = validarORedirigir('/admin');
         $vendedores = Vendedor::all();
         $errores = Propiedad::getErrores();
@@ -90,7 +94,8 @@ class PropiedadController
         $router->render("propiedades/actualizar", [
             'propiedad' => $propiedad,
             'vendedores' => $vendedores,
-            'errores' => $errores
+            'errores' => $errores,
+            'inicio' => $inicio
 
         ]);
     }
