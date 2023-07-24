@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'controllers\\' => array($baseDir . '/controllers'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-factory/src', $vendorDir . '/psr/http-message/src'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'Model\\' => array($baseDir . '/models'),
     'MVC\\' => array($baseDir . '/'),
     'Intervention\\Image\\' => array($vendorDir . '/intervention/image/src/Intervention/Image'),

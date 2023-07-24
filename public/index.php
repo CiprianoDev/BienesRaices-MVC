@@ -30,6 +30,7 @@ $router->get('/nosotros',[PaginasController::class,'nosotros']);
 $router->get('/anuncios',[PaginasController::class,'anuncios']);
 $router->get('/anuncio',[PaginasController::class,'anuncio']);
 $router->get('/contacto',[PaginasController::class,'contacto']);
+$router->post('/contacto',[PaginasController::class,'contacto']);
 
 //blogs
 $router->get('/blog',[PaginasController::class,'blog']);

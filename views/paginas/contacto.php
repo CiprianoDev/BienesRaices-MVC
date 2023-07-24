@@ -1,69 +1,65 @@
 <main class="contenedor seccion">
-        <h1>Contacto</h1>
+    <h1>Contacto</h1>
 
-        <picture>
-            <source srcset="build/img/destacada3.webp" type="image/webp">
-            <source srcset="build/img/destacada3.jpg" type="image/jpeg">
-            <img loading="lazy" src="build/img/destacada3.jpg" alt="Imagen Contacto">
-        </picture>
+    <picture>
+        <source srcset="build/img/destacada3.webp" type="image/webp">
+        <source srcset="build/img/destacada3.jpg" type="image/jpeg">
+        <img loading="lazy" src="build/img/destacada3.jpg" alt="Imagen Contacto">
+    </picture>
 
-        <h2>Llene el formulario de Contacto</h2>
+    <h2>Llene el formulario de Contacto</h2>
+    <?php if ($mensaje) {
+        echo $mensaje;
+    } ?>
+    <form class="formulario" action="/contacto" method="POST">
+        <fieldset>
+            <legend>Información Personal</legend>
 
-        <form class="formulario">
-            <fieldset>
-                <legend>Información Personal</legend>
+            <label for="nombre">Nombre</label>
+            <input type="text" placeholder="Tu Nombre" id="nombreContacto" name="contacto[nombre]" required>
 
-                <label for="nombre">Nombre</label>
-                <input type="text" placeholder="Tu Nombre" id="nombre">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="contacto[mensaje]" required></textarea>
+        </fieldset>
 
-                <label for="email">E-mail</label>
-                <input type="email" placeholder="Tu Email" id="email">
+        <fieldset>
+            <legend>Información sobre la propiedad</legend>
 
-                <label for="telefono">Teléfono</label>
-                <input type="tel" placeholder="Tu Teléfono" id="telefono">
+            <label for="opciones">Vende o Compra:</label>
+            <select id="opciones" name="contacto[accion]" required>
+                <option value="" disabled selected>-- Seleccione --</option>
+                <option value="Compra">Compra</option>
+                <option value="Vende">Vende</option>
+            </select>
 
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje"></textarea>
-            </fieldset>
+            <label for="presupuesto">Precio o Presupuesto</label>
+            <input type="number" placeholder="Tu Precio o Presupuesto" id="presupuesto" name="contacto[precio]" required>
 
-            <fieldset>
-                <legend>Información sobre la propiedad</legend>
+        </fieldset>
 
-                <label for="opciones">Vende o Compra:</label>
-                <select id="opciones">
-                    <option value="" disabled selected>-- Seleccione --</option>
-                    <option value="Compra">Compra</option>
-                    <option value="Vende">Vende</option>
-                </select>
+        <fieldset>
+            <legend>Información de Contacto</legend>
 
-                <label for="presupuesto">Precio o Presupuesto</label>
-                <input type="number" placeholder="Tu Precio o Presupuesto" id="presupuesto">
+            <p>¿Cómo desea ser contactado?</p>
+            <pre></pre>
 
-            </fieldset>
+            <div class="forma-contacto">
+                <label for="contactar-telefono">Teléfono</label>
+                <input name="contacto[forma_contacto]" type="radio" value="telefono" id="contactar-telefono" required>
 
-            <fieldset>
-                <legend>Información sobre la propiedad</legend>
+                <label for="contactar-email">E-mail</label>
+                <input name="contacto[forma_contacto]" type="radio" value="email" id="contactar-email" required>
+            </div>
+            <pre></pre>
+            <div id="contacto">
 
-                <p>Como desea ser contactado</p>
+            </div>
 
-                <div class="forma-contacto">
-                    <label for="contactar-telefono">Teléfono</label>
-                    <input name="contacto" type="radio" value="telefono" id="contactar-telefono">
 
-                    <label for="contactar-email">E-mail</label>
-                    <input name="contacto" type="radio" value="email" id="contactar-email">
-                </div>
 
-                <p>Si eligió teléfono, elija la fecha y la hora</p>
+        </fieldset>
 
-                <label for="fecha">Fecha:</label>
-                <input type="date" id="fecha">
+        <input type="submit" value="Enviar" class="boton-verde">
+    </form>
 
-                <label for="hora">Hora:</label>
-                <input type="time" id="hora" min="09:00" max="18:00">
-
-            </fieldset>
-
-            <input type="submit" value="Enviar" class="boton-verde">
-        </form>
-    </main>
+</main>
