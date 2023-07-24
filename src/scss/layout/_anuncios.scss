@@ -22,6 +22,7 @@
     color: $verde;
     font-weight: $bold;
     font-size: 3rem;
+    margin-left: 5rem;
 }
 
 .iconos-caracteristicas {
@@ -33,7 +34,7 @@
     li {
         flex: 1;
         display: flex;
-
+        margin-left: 4rem;
         img {
             flex:  0 0 3rem;
             margin-right: 1rem;
@@ -46,9 +47,15 @@
 
 .contenedor{
     margin-bottom: 3rem;
+    
 
     .icono-anuncio{
         height: 5rem;
         width: 5rem;
     }
+}
+    
+.texto-descripcion-entrada{
+    white-space: pre-line;
+    padding: 3rem;
 }

@@ -63,8 +63,10 @@ class ActiveRecord
 
 
         $resultado = self::$db->query($query);
-        if ($resultado) {
+        if ($resultado && !static::$tabla = 'blogs') {
             header('location: /admin?resultado=2');
+        } else {
+            header('location: /blog?resultado=2');
         }
     }
 
@@ -72,12 +74,14 @@ class ActiveRecord
     {
         $query = "DELETE FROM " . static::$tabla . " WHERE id = " . s($this->id) . " LIMIT 1";
         $resultado = self::$db->query($query);
-        if ($resultado) {
 
-            if (static::$tabla == "propiedades") {
-                $this->borrarImagen();
-            }
+        if ($resultado && !static::$tabla == "vendedores") {
+            $this->borrarImagen();
+        }
+        if ($resultado && !static::$tabla = 'blogs') {
             header('location: /admin?resultado=3');
+        } else {
+            header('location: /blog?resultado=3');
         }
     }
 
@@ -94,8 +98,10 @@ class ActiveRecord
 
         $resultado = self::$db->query($sql);
 
-        if ($resultado) {
+        if ($resultado && !static::$tabla = 'blogs') {
             header('location: /admin?resultado=1');
+        } else {
+            header('location: /blog?resultado=1');
         }
     }
 

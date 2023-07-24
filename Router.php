@@ -25,7 +25,7 @@ class Router
 
         if ($metodo === 'GET') {
             $funcion = $this->rutasGET[$urlActual] ?? null;
-        }else{
+        } else {
             $funcion = $this->rutasPOST[$urlActual] ?? null;
         }
 
@@ -42,7 +42,7 @@ class Router
         foreach ($datos as $key => $value) {
             $$key = $value;
         }
-        
+
         ob_start();
         include_once __DIR__ .  "/views/$view.php";
         $contenido = ob_get_clean();

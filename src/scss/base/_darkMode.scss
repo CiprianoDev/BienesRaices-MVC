@@ -50,6 +50,35 @@
     .boton-mostrar{
         background-color: $grisOscuro;
     }
+
+    .boton-logo{
+        img{
+        filter: invert(100%);
+        }
+    }
+
+    
+    .boton-logo-form{
+        img{
+        filter: invert(100%);
+        }
+
+        input[type="submit"]{
+            color: $blanco;
+        }
+
+        
+    }
+
+    .boton-logo-form:hover{
+       
+
+        input[type="submit"]{
+            color: $amarillo;
+        }
+
+        
+    }
   
 }
 

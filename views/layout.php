@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-$auth = $_SESSION['login'] ?? false;
+// $auth = $_SESSION['login'] ?? false;
 
 
 ?>
@@ -25,11 +25,11 @@ $auth = $_SESSION['login'] ?? false;
         <div class="contenedor contenido-header">
             <div class="barra">
                 <a href="/">
-                    <img src="build/img/logo.svg" alt="Logotipo de Bienes Raices">
+                    <img src="/build/img/logo.svg" alt="Logotipo de Bienes Raices">
                 </a>
 
                 <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="icono menu responsive">
+                    <img src="/build/img/barras.svg" alt="icono menu responsive">
                 </div>
 
                 <div class="derecha">

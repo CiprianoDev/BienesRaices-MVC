@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/../includes/app.php";
 
+use controllers\BlogsController;
 use controllers\PaginasController;
 use MVC\Router;
 use controllers\PropiedadController;
@@ -27,7 +28,16 @@ $router->post('/vendedores/eliminar',[VendedorController::class,'eliminar']);
 $router->get('/',[PaginasController::class,'index']);
 $router->get('/nosotros',[PaginasController::class,'nosotros']);
 $router->get('/anuncios',[PaginasController::class,'anuncios']);
-$router->get('/blog',[PaginasController::class,'blog']);
+$router->get('/anuncio',[PaginasController::class,'anuncio']);
 $router->get('/contacto',[PaginasController::class,'contacto']);
+
+//blogs
+$router->get('/blog',[PaginasController::class,'blog']);
+$router->get('/blogs/crear',[BlogsController::class,'crear']);
+$router->post('/blogs/crear',[BlogsController::class,'crear']);
+$router->get('/blogs/actualizar',[BlogsController::class,'actualizar']);
+$router->get('/blogs/entrada',[BlogsController::class,'entrada']);
+$router->post('/blogs/actualizar',[BlogsController::class,'actualizar']);
+$router->post('/blogs/eliminar',[BlogsController::class,'eliminar']);
 
 $router->comprobarRutas();

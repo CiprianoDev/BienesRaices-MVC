@@ -2,6 +2,7 @@
 
 namespace controllers;
 
+use Model\Blog;
 use Model\Propiedad;
 use MVC\Router;
 
@@ -11,9 +12,26 @@ class PaginasController
     {
         $inicio = true;
         $propiedades = Propiedad::get(3);
+        $blogs = Blog::get(2);
         $router->render('paginas/index', [
             'inicio' => $inicio,
             'propiedades' => $propiedades,
+            'blogs' => $blogs
+
+        ]);
+    }
+
+    public static function blog(Router $router)
+    {
+        $inicio = false;
+        $auth = true;
+        $resultado = $_GET['resultado'] ?? null;
+        $blogs = Blog::all();
+        $router->render('paginas/blog', [
+            'inicio' => $inicio,
+            'auth' => $auth,
+            'blogs' => $blogs,
+            'resultado' => $resultado
 
         ]);
     }
@@ -31,19 +49,22 @@ class PaginasController
     {
         $inicio = false;
         $propiedades = Propiedad::all();
-        $router->render('paginas/listado', [
+        $router->render('paginas/listaPropiedades', [
             'inicio' => $inicio,
             'propiedades' => $propiedades
             
         ]);
     }
 
-    public static function blog(Router $router)
+    public static function anuncio(Router $router)
     {
         $inicio = false;
-        $router->render('paginas/blog', [
-            'inicio' => $inicio
-
+        $id = validarORedirigir('/');
+        $propiedad = Propiedad::find($id);
+        $router->render('paginas/anuncio', [
+            'inicio' => $inicio,
+            'propiedad' => $propiedad
+            
         ]);
     }
 

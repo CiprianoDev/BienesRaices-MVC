@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     darkMode();
     eventListeners();
 
-
 });
+
 
 function mostrarPassword() {
     try {
@@ -53,7 +53,6 @@ function darkMode() {
 
 function eventListeners() {
     const mobileMenu = document.querySelector('.mobile-menu');
-
     mobileMenu.addEventListener('click', navegacionResponsive);
 
     const btnMostrarPass = document.getElementById('boton-mostrar');

@@ -32,7 +32,6 @@ class PropiedadController
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             $propiedad = new Propiedad($_POST['propiedad']);
-
             if (!is_dir(CARPERTA_IMAGENES)) {
                 mkdir(CARPERTA_IMAGENES);
             }
