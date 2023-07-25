@@ -8,7 +8,7 @@ use Model\Vendedor;
 class VendedorController
 {
     public static function crear(Router $router)
-    {
+    {   $inicio = false;
         $vendedor = new Vendedor();
         $errores = Vendedor::getErrores();
 
@@ -25,12 +25,13 @@ class VendedorController
 
         $router->render('/vendedores/crear', [
             'vendedor' => $vendedor,
-            'errores' => $errores
+            'errores' => $errores,
+            'inicio' => $inicio
         ]);
     }
 
     public static function actualizar(Router $router)
-    {
+    {   $inicio = false;
         $id = validarORedirigir('/admin');
         $vendedor = Vendedor::find($id);
         $errores = Vendedor::getErrores();
@@ -50,7 +51,8 @@ class VendedorController
         $router->render('/vendedores/actualizar', [
             'vendedor' => $vendedor,
             'errores' => $errores,
-            'id' => $id
+            'id' => $id,
+            'inicio' => $inicio
         ]);
     }
 

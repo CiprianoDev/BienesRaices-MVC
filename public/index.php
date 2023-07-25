@@ -2,6 +2,7 @@
 require_once __DIR__ . "/../includes/app.php";
 
 use controllers\BlogsController;
+use controllers\LoginController;
 use controllers\PaginasController;
 use MVC\Router;
 use controllers\PropiedadController;
@@ -40,5 +41,11 @@ $router->get('/blogs/actualizar',[BlogsController::class,'actualizar']);
 $router->get('/blogs/entrada',[BlogsController::class,'entrada']);
 $router->post('/blogs/actualizar',[BlogsController::class,'actualizar']);
 $router->post('/blogs/eliminar',[BlogsController::class,'eliminar']);
+
+//Autenticacion y login 
+
+$router->get('/login',[LoginController::class,'login']);
+$router->post('/login',[LoginController::class,'login']);
+$router->get('/logout',[LoginController::class,'logout']);
 
 $router->comprobarRutas();

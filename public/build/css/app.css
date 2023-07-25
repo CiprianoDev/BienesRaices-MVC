@@ -1026,7 +1026,7 @@ table.propiedades .imagen {
 }
 @media (min-width: 768px) {
   .login {
-    height: 70rem;
+    max-height: 40rem;
   }
 }
 @media (min-width: 1024px) {
@@ -1056,7 +1056,7 @@ table.propiedades .imagen {
   width: 100%;
 }
 .login .alerta {
-  width: 60rem;
+  max-width: 60rem;
 }
 
 .boton-mostrar {

@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-// $auth = $_SESSION['login'] ?? false;
+$auth = $_SESSION['login'] ?? false;
 
 
 ?>
@@ -42,7 +42,7 @@ if (!isset($_SESSION)) {
 
                         <?php if ($auth) : ?>
 
-                            <a href="/cerrarSesion">Cerrar Sesion</a>
+                            <a href="/logout">Cerrar Sesion</a>
                         <?php endif ?>
                     </nav>
                 </div>

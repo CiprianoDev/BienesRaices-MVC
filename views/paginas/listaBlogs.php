@@ -1,3 +1,13 @@
+<?php
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+$auth = $_SESSION['login'] ?? false;
+
+
+?>
 <?php foreach ($blogs as $blog) : ?>
         <article class="entrada-blog">
             <div class="imagen">

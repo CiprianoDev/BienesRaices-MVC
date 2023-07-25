@@ -25,12 +25,10 @@ class PaginasController
     public static function blog(Router $router)
     {
         $inicio = false;
-        $auth = true;
         $resultado = $_GET['resultado'] ?? null;
         $blogs = Blog::all();
         $router->render('paginas/blog', [
             'inicio' => $inicio,
-            'auth' => $auth,
             'blogs' => $blogs,
             'resultado' => $resultado
 
@@ -112,7 +110,7 @@ class PaginasController
                 $contenido .= '<p> Fecha: ' . $respuesta['fecha'] . '</p>';
                 $contenido .= '<p> Hora: ' . $respuesta['hora'] . '</p>';
             }
-            $contenido .= '<p> El usuario desea hacer una : ' . $respuesta['accion'] . '</p>';
+            $contenido .= '<p> El usuario : ' . $respuesta['accion'] . '</p>';
             $contenido .= '<p> Precio o Presupuesto : $' . $respuesta['precio'] . '</p>';
             $contenido .= '</html>';
 
@@ -122,9 +120,9 @@ class PaginasController
             //enviar email
 
             if ($phpmailer->send()) {
-                $mensaje = '<div class="alerta correcto"> Mendaje enviado </div>';
+                $mensaje = '<div class="alerta correcto"> Mensaje enviado </div>';
             } else {
-                $mensaje = '<div class="alerta error"> no se pudo enviar el mensaje </div>';
+                $mensaje = '<div class="alerta error"> No se pudo enviar el mensaje </div>';
             }
         }
 
