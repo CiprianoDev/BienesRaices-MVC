@@ -1,14 +1,12 @@
-<?php 
+<?php
 
 require 'funciones.php';
-require 'config/database.php';
+require 'database.php';
 require __DIR__ . '/../vendor/autoload.php';
-
-//conexion a base de datos
-$db = conectarDB();
-
 use Model\ActiveRecord;
 
-
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->safeLoad();
+//conexion a base de datos
+$db = conectarDB();
 ActiveRecord::setDB($db);
-

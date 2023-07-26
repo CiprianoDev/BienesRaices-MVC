@@ -63,7 +63,7 @@ class ActiveRecord
 
 
         $resultado = self::$db->query($query);
-        if ($resultado && !static::$tabla = 'blogs') {
+        if ($resultado && static::$tabla != 'blogs') {
             header('location: /admin?resultado=2');
         } else {
             header('location: /blog?resultado=2');
@@ -78,7 +78,7 @@ class ActiveRecord
         if ($resultado && !static::$tabla == "vendedores") {
             $this->borrarImagen();
         }
-        if ($resultado && !static::$tabla = 'blogs') {
+        if ($resultado && static::$tabla != 'blogs') {
             header('location: /admin?resultado=3');
         } else {
             header('location: /blog?resultado=3');
@@ -98,7 +98,7 @@ class ActiveRecord
 
         $resultado = self::$db->query($sql);
 
-        if ($resultado && !static::$tabla = 'blogs') {
+        if ($resultado && static::$tabla != 'blogs') {
             header('location: /admin?resultado=1');
         } else {
             header('location: /blog?resultado=1');
